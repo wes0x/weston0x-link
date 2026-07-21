@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wespicks — @weston0x</title>
+<meta name="description" content="Daily sports analysis. One analyzed play a day — win or loss, all tracked. Join the VIP for the full card." />
+<style>
+  :root{
+    --bg:#0b0d12; --card:#151922; --line:#232a36;
+    --text:#f2f4f8; --muted:#9aa4b2;
+    --gold:#f5c542; --gold-2:#e0a800;
+    --green:#2ecc71; --purple:#8b7cf6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  body{min-height:100vh;display:flex;justify-content:center;padding:32px 20px 48px;
+    background:radial-gradient(120% 60% at 50% 0%, #171b26 0%, var(--bg) 60%);}
+  .wrap{width:100%;max-width:440px;display:flex;flex-direction:column;align-items:center}
+  .avatar{width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:44px;background:linear-gradient(145deg,#1e2430,#11141b);
+    border:2px solid var(--gold);box-shadow:0 0 32px rgba(245,197,66,.25);margin-bottom:16px}
+  h1{font-size:26px;font-weight:800;letter-spacing:.3px}
+  .handle{color:var(--gold);font-weight:600;font-size:15px;margin-top:4px}
+  .tag{color:var(--muted);font-size:15px;line-height:1.5;text-align:center;margin:14px 4px 28px}
+  .links{width:100%;display:flex;flex-direction:column;gap:14px}
+  a.btn{display:flex;align-items:center;gap:14px;width:100%;padding:18px 20px;border-radius:16px;
+    text-decoration:none;color:var(--text);background:var(--card);border:1px solid var(--line);
+    font-size:17px;font-weight:600;transition:transform .12s ease,border-color .12s ease}
+  a.btn:hover{transform:translateY(-2px)}
+  a.btn .emoji{font-size:22px;width:26px;text-align:center}
+  a.btn .sub{display:block;font-size:13px;font-weight:400;color:var(--muted);margin-top:2px}
+  a.btn .txt{display:flex;flex-direction:column}
+  a.vip{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#1a1400;border:none;
+    box-shadow:0 8px 24px rgba(245,197,66,.3)}
+  a.vip .sub{color:#5a4600}
+  a.vip:hover{border:none}
+  .arrow{margin-left:auto;opacity:.6;font-size:18px}
+  .disclaimer{margin-top:34px;text-align:center;color:var(--muted);font-size:12px;line-height:1.6;max-width:360px}
+  .disclaimer strong{color:#c6cdd8}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="avatar">🔒</div>
+    <h1>WESPICKS</h1>
+    <div class="handle">@weston0x</div>
+    <p class="tag">One analyzed play a day. Win or loss — all tracked.<br>The full card lives in the VIP room.</p>
+
+    <nav class="links">
+      <!-- SWAP href="#" with your real Discord invite link -->
+      <a class="btn" href="#">
+        <span class="emoji">🔒</span>
+        <span class="txt">Today's Free Pick<span class="sub">Join the free Discord</span></span>
+        <span class="arrow">→</span>
+      </a>
+
+      <!-- SWAP href="#" with your Whop checkout link — THIS is the payment step -->
+      <a class="btn vip" href="#">
+        <span class="emoji">💎</span>
+        <span class="txt">Join VIP — Full Card<span class="sub">$40/wk · $99/mo · early pricing</span></span>
+        <span class="arrow">→</span>
+      </a>
+
+      <!-- SWAP href="#" with your track-record channel/page -->
+      <a class="btn" href="#">
+        <span class="emoji">📊</span>
+        <span class="txt">Track Record<span class="sub">Every pick logged — proof</span></span>
+        <span class="arrow">→</span>
+      </a>
+
+      <!-- SWAP href="#" with your TikTok profile -->
+      <a class="btn" href="#">
+        <span class="emoji">🎬</span>
+        <span class="txt">TikTok<span class="sub">@weston0x</span></span>
+        <span class="arrow">→</span>
+      </a>
+    </nav>
+
+    <p class="disclaimer">
+      <strong>21+ only.</strong> For entertainment and sports analysis — not financial or betting advice.
+      Never bet more than you can afford to lose.<br>
+      Problem gambling? Call <strong>1-800-GAMBLER</strong>.
+    </p>
+  </main>
+</body>
+</html>
