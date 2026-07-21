@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WesLocks — Track Record</title>
+<meta name="description" content="Every WesLocks pick, logged. Wins and losses. No hiding." />
+<meta name="theme-color" content="#05060a" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#05060a;--text:#eef1f7;--muted:#8b93a7;
+    --gold:#ffd76e;--violet:#7c5cff;--cyan:#22d3ee;
+    --win:#37e39b;--loss:#ff6b6b;--push:#8b93a7;
+    --glass:rgba(255,255,255,.045);--line:rgba(255,255,255,.09);
+    --display:"Space Grotesk",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif;--mono:"JetBrains Mono",monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:var(--body);min-height:100dvh;
+    padding:40px 18px 48px;overflow-x:hidden;position:relative;-webkit-font-smoothing:antialiased}
+  .bg{position:fixed;inset:0;z-index:-3;background:radial-gradient(130% 80% at 50% -5%,#0e1120 0%,#05060a 58%)}
+  .orb{position:fixed;border-radius:50%;filter:blur(80px);z-index:-2}
+  .orb.v{width:60vw;max-width:520px;aspect-ratio:1;left:-15%;top:-8%;background:radial-gradient(circle,#7c5cff 0%,transparent 68%);opacity:.5}
+  .orb.g{width:55vw;max-width:480px;aspect-ratio:1;right:-18%;top:6%;background:radial-gradient(circle,#ffd76e 0%,transparent 70%);opacity:.34}
+  .wrap{max-width:760px;margin:0 auto;position:relative;z-index:1}
+
+  header{text-align:center;margin-bottom:30px}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:#a9f0cf;padding:6px 13px;border-radius:999px;background:rgba(55,227,155,.09);
+    border:1px solid rgba(55,227,155,.3);margin-bottom:16px}
+  .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--win);box-shadow:0 0 10px var(--win)}
+  h1{font-family:var(--display);font-weight:700;font-size:34px;letter-spacing:.05em;
+    background:linear-gradient(180deg,#fff,#aab2c8);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{font-family:var(--mono);font-size:13px;color:var(--gold);margin-top:6px;letter-spacing:.14em;text-transform:uppercase}
+  .tagline{color:var(--muted);font-size:14px;margin-top:12px}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0 30px}
+  .stat{background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:18px 12px;text-align:center;
+    backdrop-filter:blur(14px)}
+  .stat .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .stat .v{font-family:var(--display);font-weight:700;font-size:26px;margin-top:8px}
+  .stat.units .v.pos{color:var(--win)}.stat.units .v.neg{color:var(--loss)}
+
+  .tablewrap{background:var(--glass);border:1px solid var(--line);border-radius:18px;overflow:hidden;backdrop-filter:blur(14px)}
+  .scroll{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;min-width:560px}
+  th,td{padding:14px 14px;text-align:left;font-size:14px;border-bottom:1px solid var(--line);white-space:nowrap}
+  th{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.02)}
+  tbody tr:last-child td{border-bottom:none}
+  td.play{font-weight:600}
+  .conf{font-family:var(--mono);color:var(--gold);font-size:12px}
+  .res{font-family:var(--mono);font-weight:600;font-size:12px;padding:4px 10px;border-radius:999px;display:inline-block}
+  .res.win{color:var(--win);background:rgba(55,227,155,.12)}
+  .res.loss{color:var(--loss);background:rgba(255,107,107,.12)}
+  .res.push{color:var(--push);background:rgba(139,147,167,.12)}
+  .res.pending{color:var(--gold);background:rgba(255,215,110,.12)}
+  td.u.pos{color:var(--win)}td.u.neg{color:var(--loss)}td.u{font-family:var(--mono);font-weight:600}
+  .empty{text-align:center;color:var(--muted);padding:34px 16px;font-size:14px}
+
+  footer{text-align:center;color:#697089;font-size:11.5px;line-height:1.6;margin-top:28px}
+  footer b{color:#9aa2b8}
+
+  @media (max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}h1{font-size:28px}}
+</style>
+</head>
+<body>
+  <div class="bg"></div><span class="orb v"></span><span class="orb g"></span>
+  <div class="wrap">
+    <header>
+      <div class="badge"><span class="dot"></span> Verified Record</div>
+      <h1>WESLOCKS</h1>
+      <div class="sub">Track Record</div>
+      <p class="tagline">Every pick logged — wins <b style="color:#a9f0cf">and</b> losses. No hiding, no deleting.</p>
+    </header>
+
+    <div class="stats">
+      <div class="stat"><div class="k">This Week</div><div class="v" id="wk">0-0</div></div>
+      <div class="stat"><div class="k">This Month</div><div class="v" id="mo">0-0</div></div>
+      <div class="stat"><div class="k">All-Time</div><div class="v" id="all">0-0</div></div>
+      <div class="stat units"><div class="k">Units</div><div class="v" id="units">+0.0</div></div>
+    </div>
+
+    <div class="tablewrap"><div class="scroll">
+      <table>
+        <thead><tr><th>Date</th><th>League</th><th>Matchup</th><th>Play</th><th>Conf</th><th>Result</th><th>Units</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div></div>
+
+    <footer>
+      <b>21+ only.</b> Entertainment and sports analysis — not financial or betting advice.<br>
+      Never bet more than you can afford to lose. Problem gambling? Call <b>1-800-GAMBLER</b>.
+    </footer>
+  </div>
+
+<script>
+  /* ============================================================
+     LOG PICKS HERE — add one line per pick, newest anywhere.
+     result: 'win' | 'loss' | 'push' | 'pending'
+     units:  + for a win, - for a loss (0 while pending)
+     ============================================================ */
+  const PICKS = [
+    { date:'2026-07-22', league:'WNBA', matchup:'Aces @ Mystics', play:'Aces -6.5', conf:3, result:'pending', units:0 },
+  ];
+
+  const settled = PICKS.filter(p => p.result==='win' || p.result==='loss');
+  const rec = (arr)=>{const w=arr.filter(p=>p.result==='win').length,l=arr.filter(p=>p.result==='loss').length;return w+'-'+l;};
+  const now = new Date();
+  const within = (p,days)=>{const d=new Date(p.date+'T12:00:00');return (now-d)/(1000*60*60*24) <= days && d<=now;};
+
+  document.getElementById('wk').textContent  = rec(settled.filter(p=>within(p,7)));
+  document.getElementById('mo').textContent  = rec(settled.filter(p=>within(p,30)));
+  document.getElementById('all').textContent = rec(settled);
+
+  const totalUnits = settled.reduce((s,p)=>s+(Number(p.units)||0),0);
+  const uEl = document.getElementById('units');
+  uEl.textContent = (totalUnits>=0?'+':'') + totalUnits.toFixed(1);
+  uEl.classList.add(totalUnits>=0?'pos':'neg');
+
+  const badge = r => `<span class="res ${r}">${({win:'WIN ✅',loss:'LOSS ❌',push:'PUSH',pending:'PENDING ⏳'})[r]}</span>`;
+  const rows = [...PICKS].sort((a,b)=>b.date.localeCompare(a.date)).map(p=>{
+    const u = Number(p.units)||0;
+    const uCls = p.result==='pending' ? '' : (u>=0?'pos':'neg');
+    const uTxt = p.result==='pending' ? '—' : (u>=0?'+':'')+u.toFixed(1);
+    return `<tr>
+      <td>${p.date.slice(5)}</td><td>${p.league}</td><td>${p.matchup}</td>
+      <td class="play">${p.play}</td><td class="conf">${p.conf}/5</td>
+      <td>${badge(p.result)}</td><td class="u ${uCls}">${uTxt}</td></tr>`;
+  }).join('');
+  document.getElementById('rows').innerHTML = rows || `<tr><td colspan="7" class="empty">First pick drops soon. 🔒</td></tr>`;
+</script>
+</body>
+</html>
