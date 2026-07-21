@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WesLocks VIP — cover</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{--gold:#ffd76e;--gold-deep:#c8912b;--violet:#7c5cff;--cyan:#22d3ee}
+  html,body{width:100%;height:100%}
+  body{background:#05060a;color:#eef1f7;overflow:hidden;
+    font-family:"Space Grotesk",system-ui,sans-serif;
+    display:flex;align-items:center;justify-content:center;position:relative}
+
+  /* background */
+  .bg{position:absolute;inset:0;z-index:0;background:radial-gradient(130% 90% at 50% -5%,#111528 0%,#05060a 58%)}
+  .orb{position:absolute;border-radius:50%;filter:blur(90px)}
+  .orb.v{width:720px;height:720px;left:-160px;top:-180px;background:radial-gradient(circle,#7c5cff 0%,transparent 68%);opacity:.6}
+  .orb.c{width:640px;height:640px;right:-180px;top:-60px;background:radial-gradient(circle,#22d3ee 0%,transparent 68%);opacity:.5}
+  .orb.g{width:720px;height:720px;left:38%;bottom:-320px;background:radial-gradient(circle,#ffd76e 0%,transparent 70%);opacity:.4}
+  .grid{position:absolute;inset:0;z-index:1;
+    background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(120% 90% at 50% 40%,#000 25%,transparent 80%);
+    mask-image:radial-gradient(120% 90% at 50% 40%,#000 25%,transparent 80%)}
+  .vign{position:absolute;inset:0;z-index:2;box-shadow:inset 0 0 220px 60px rgba(0,0,0,.7)}
+
+  .stage{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 60px}
+
+  /* emblem */
+  .emblem{position:relative;width:210px;height:210px;margin-bottom:38px}
+  .emblem .ring{position:absolute;inset:0;border-radius:50%;
+    background:conic-gradient(from 210deg,var(--violet),var(--cyan),var(--gold),var(--violet));
+    filter:drop-shadow(0 0 46px rgba(124,92,255,.55))}
+  .emblem .ring::after{content:"";position:absolute;inset:7px;border-radius:50%;background:#080a12}
+  .emblem .face{position:absolute;inset:14px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:96px;background:radial-gradient(circle at 32% 26%,#1c2233,#080a12);
+    box-shadow:inset 0 0 40px rgba(124,92,255,.4)}
+
+  .kicker{display:inline-flex;align-items:center;gap:12px;font-family:"JetBrains Mono",monospace;
+    font-size:20px;letter-spacing:.34em;text-transform:uppercase;color:#a9f0cf;margin-bottom:26px;
+    padding:10px 22px;border-radius:999px;background:rgba(55,227,155,.08);border:1px solid rgba(55,227,155,.32);
+    box-shadow:0 0 40px rgba(55,227,155,.16)}
+  .kicker .dot{width:11px;height:11px;border-radius:50%;background:#37e39b;box-shadow:0 0 14px #37e39b}
+
+  .word{display:flex;align-items:center;gap:28px;margin-bottom:8px}
+  h1{font-size:148px;font-weight:700;letter-spacing:.02em;line-height:.9;
+    background:linear-gradient(180deg,#ffffff 0%,#aab2c8 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .vip{font-size:34px;font-weight:700;letter-spacing:.14em;color:#2a1c00;padding:12px 20px;border-radius:14px;
+    background:linear-gradient(135deg,var(--gold),var(--gold-deep));box-shadow:0 12px 40px rgba(255,215,110,.4);align-self:center}
+
+  .tagline{font-family:"JetBrains Mono",monospace;font-size:30px;letter-spacing:.14em;color:#c9d0e0;margin-top:26px}
+  .tagline b{color:var(--gold)}
+  .handle{font-family:"JetBrains Mono",monospace;font-size:26px;color:var(--gold);margin-top:22px;opacity:.9}
+
+  .foot{position:absolute;bottom:36px;left:0;right:0;z-index:3;text-align:center;
+    font-family:"JetBrains Mono",monospace;font-size:16px;letter-spacing:.22em;text-transform:uppercase;color:#4a5064}
+</style>
+</head>
+<body>
+  <div class="bg"><span class="orb v"></span><span class="orb c"></span><span class="orb g"></span></div>
+  <div class="grid"></div>
+  <div class="vign"></div>
+
+  <div class="stage">
+    <div class="emblem"><span class="ring"></span><span class="face">🔒</span></div>
+    <div class="kicker"><span class="dot"></span> Daily Sports Locks</div>
+    <div class="word"><h1>WESLOCKS</h1><span class="vip">VIP</span></div>
+    <div class="tagline">The full card · <b>every pick tracked</b> · win or loss</div>
+    <div class="handle">@weston0x</div>
+  </div>
+
+  <div class="foot">21+ · Entertainment &amp; sports analysis only</div>
+</body>
+</html>
